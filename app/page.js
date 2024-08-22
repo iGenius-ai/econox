@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden px-6">
+    <main className="overflow-hidden px-4">
       <Navigation />
       <Hero />
 

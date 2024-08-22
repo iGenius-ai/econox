@@ -36,7 +36,7 @@ export default function Navigation() {
           scrolled: { backgroundColor: "rgba(0, 0, 0, 0.9)", boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)" }
         }}
         transition={{ duration: 0.3 }}
-        className="fixed top-0 left-0 right-0 z-50 p-4 backdrop-blur-sm"
+        className="fixed top-0 left-0 right-0 z-50 p-4 backdrop-blur-[7px]"
       >
         <div className="absolute w-[50%] inset-0 -z-10 gradient-01"></div>
         <div className="container mx-auto flex justify-between items-center">
