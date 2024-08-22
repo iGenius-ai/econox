@@ -5,7 +5,7 @@ import { planetVariants, staggerContainer, fadeIn } from '../utils/motion';
 import { TitleText, TypingText } from '../constants/CustomText';
 import NewFeatures from './parts/NewFeatures';
 import Image from 'next/image';
-import { newFeatures } from '@/constants/features';
+import { newFeatures } from '@/constants/Features';
 
 const WhatsNew = () => (
   <section className={`relative z-10`}>

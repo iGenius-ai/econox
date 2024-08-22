@@ -27,7 +27,7 @@ const roadmapData = [
   },
   {
     title: 'Public Econox Token Sale - ICO',
-    description: 'General Public sale of the allocated 15 Million CLT tokens, sold in three phases: Phase 1 - 5 Million CLT ($0.09), Phase 2 - 5 Million CLT ($0.12), Phase 3 - 5 Million CLT ($0.15)',
+    description: 'General Public sale of allocated 15 Million CLT tokens, sold in three phases: Phase 1 - 5 Million CLT ($0.09), Phase 2 - 5 Million CLT ($0.12), Phase 3 - 5 Million CLT ($0.15)',
     percentage: 100,
     status: 'Upcoming',
   },

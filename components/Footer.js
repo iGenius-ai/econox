@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { footerVariants } from '../utils/motion';
 import Link from 'next/link';
-import { socials } from '@/constants/features';
+import { socials } from '@/constants/Features';
 
 const Footer = () => (
   <motion.footer

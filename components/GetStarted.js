@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import StartSteps from './parts/StartSteps';
 import Image from 'next/image';
-import { startingFeatures } from '../constants/features';
+import { startingFeatures } from '../constants/Features';
 import { TitleText, TypingText } from '../constants/CustomText';
 import { fadeIn, planetVariants, staggerContainer } from '../utils/motion';
 
