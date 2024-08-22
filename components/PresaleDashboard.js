@@ -1,70 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useWeb3Modal } from '@web3modal/wagmi/react';
+// import { ChevronDown } from 'lucide-react';
 
 const PresaleDashboard = () => {
-  const { open } = useWeb3Modal()
+  const { open } = useWeb3Modal();
+  const [fromToken, setFromToken] = useState('SOL');
+  const [toToken, setToToken] = useState('RAY');
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-[#213A57] rounded-3xl p-4 sm:p-6 py-8 mx-16 max-w-xl text-white shadow-lg"
+      className="bg-[#1a1b23] rounded-lg p-6 max-w-md mx-auto text-white shadow-lg"
     >
-      <h2 className="text-xl font-semi mb-4">Presale Dashboard</h2>
-      
-      <div className="bg-[#0B6477] rounded-xl p-4 mb-4">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-[#80ED99] text-xs">Contribution Received</span>
-          <span className="bg-[#80ED99] text-[#213A57] text-xs font-bold px-2 py-1 rounded">Listing Price = $0.1</span>
-        </div>
-        <div className="text-2xl font-bold mb-2">$42115.00000000</div>
-        <div className="w-full bg-[#14919B] rounded-full h-2 mb-2">
-          <div className="bg-gradient-to-r from-[#0AD1C8] to-[#45DFB1] h-2 rounded-full" style={{width: '70%'}}></div>
-        </div>
-        <p className="text-sm text-[#80ED99]">Vests daily over 12 months, beginning day 30 after public sale, ≈ 6% per month</p>
-      </div>
-      
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="bg-[#0B6477] rounded-xl p-3 text-center">
-          <div className="text-[#80ED99] text-sm mb-1">Stage</div>
-          <div className="font-bold">Phase One</div>
-        </div>
-        <div className="bg-[#0B6477] rounded-xl p-3 text-center">
-          <div className="text-[#80ED99] text-sm mb-1">Price Per Celia</div>
-          <div className="font-bold">0.1</div>
-        </div>
-      </div>
-      
-      <div className="bg-[#0B6477] rounded-xl p-3 mb-4">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <div className="w-5 h-5 bg-[#80ED99] rounded-full flex items-center justify-center mr-2">T</div>
-            <input
-              type="text"
-              className="bg-[#213A57] text-white p-2 rounded w-16 sm:w-24 py-1 text-left"
-              placeholder="0"
-            />
+      <div className="space-y-4">
+        <TokenInput label="From" token={fromToken} setToken={setFromToken} />
+        <div className="flex justify-center">
+          <div className="bg-[#6366f1] p-2 rounded-full">
+            {/* <ChevronDown className="text-white" /> */}
           </div>
-          <div className="font-semibold text-sm mx-1">USDT</div>
-          <div className="text-[#45DFB1] mx-1">▶</div>
-          <div className="flex items-center">
-            <div className="w-5 h-5 bg-[#14919B] rounded-full flex items-center justify-center mr-2">C</div>
-            <input
-              type="text"
-              className="bg-[#213A57] text-white p-2 rounded w-16 sm:w-24 py-1 text-left"
-              placeholder="0"
-            />
-          </div>
-          <div className="font-semibold text-sm ml-1">Celia</div>
         </div>
+        <TokenInput label="To" token={toToken} setToken={setToToken} />
+        <button
+          onClick={() => open({ view: 'Connect' })}
+          className="w-full bg-[#6366f1] hover:bg-[#4f46e5] text-white font-bold py-3 px-4 rounded-xl transition duration-300"
+        >
+          Connect Wallet
+        </button>
       </div>
-      
-      <button onClick={() => {open({ view: 'Connect' })}} className="w-full bg-[#14919B] hover:bg-[#0B6477] text-white font-bold py-3 px-4 rounded-xl transition duration-300">
-        Connect Now
-      </button>
     </motion.div>
+  );
+};
+
+const TokenInput = ({ label, token, setToken }) => {
+  return (
+    <div className="bg-[#272833] rounded-xl p-4">
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-gray-400 text-sm">{label}</span>
+        <span className="text-gray-400 text-sm">Max 50%</span>
+      </div>
+      <div className="flex justify-between items-center">
+        <input
+          type="text"
+          className="bg-transparent text-white text-2xl font-bold w-full focus:outline-none"
+          placeholder="0"
+        />
+        <button
+          onClick={() => setToken(token)}
+          className="flex items-center bg-[#3a3b46] hover:bg-[#4a4b56] rounded-xl px-3 py-2 transition duration-300"
+        >
+          <span className="mr-2">{token}</span>
+          {/* <ChevronDown size={16} /> */}
+        </button>
+      </div>
+      <div className="text-right text-gray-400 text-sm mt-2">~$0</div>
+    </div>
   );
 };
 

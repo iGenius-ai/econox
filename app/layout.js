@@ -1,11 +1,11 @@
-import { Lexend } from "next/font/google";
+import { Syne } from "next/font/google";
 import AppKitProvider from "@/context/WagmiContext"
 import "./globals.css";
 import { cookieToInitialState } from "wagmi";
 import { headers } from "next/headers";
 import { config } from "@/config/config";
 
-const lexend = Lexend({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
+const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
 export const metadata = {
   title: "Econox Coin - Home",
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={lexend.className}>
+      <body className={syne.className}>
         <AppKitProvider initialState={initialState}>{children}</AppKitProvider>
       </body>
     </html>
