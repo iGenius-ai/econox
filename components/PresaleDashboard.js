@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useWeb3Modal } from '@web3modal/wagmi/react';
-// import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const PresaleDashboard = () => {
   const { open } = useWeb3Modal();
@@ -19,7 +19,7 @@ const PresaleDashboard = () => {
         <TokenInput label="From" token={fromToken} setToken={setFromToken} />
         <div className="flex justify-center">
           <div className="bg-[#6366f1] p-2 rounded-full">
-            {/* <ChevronDown className="text-white" /> */}
+            <ChevronDown className="text-white" />
           </div>
         </div>
         <TokenInput label="To" token={toToken} setToken={setToToken} />
@@ -52,7 +52,7 @@ const TokenInput = ({ label, token, setToken }) => {
           className="flex items-center bg-[#3a3b46] hover:bg-[#4a4b56] rounded-xl px-3 py-2 transition duration-300"
         >
           <span className="mr-2">{token}</span>
-          {/* <ChevronDown size={16} /> */}
+          <ChevronDown size={16} />
         </button>
       </div>
       <div className="text-right text-gray-400 text-sm mt-2">~$0</div>
