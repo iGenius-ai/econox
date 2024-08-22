@@ -26,7 +26,7 @@ const Hero = () => (
           variants={textVariant(1.3)}
           className="text-base sm:text-lg md:text-xl max-w-3xl text-gray-100 mb-2"
         >
-          Econox — An ERC-20 token with a deflationary edge, seamlessly integrated into Ethereum's DeFi landscape. 
+          Econox — An ERC-20 token with a deflationary edge, seamlessly integrated into Ethereum&apos;s DeFi landscape. 
           Stake your tokens for passive income, diversify your investments, and set out on your journey toward financial growth. 
         </motion.p>
 
