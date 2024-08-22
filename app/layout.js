@@ -4,7 +4,6 @@ import "./globals.css";
 import { cookieToInitialState } from "wagmi";
 import { headers } from "next/headers";
 import { config } from "@/config/config";
-import Navigation from "@/components/Navbar";
 
 const lexend = Lexend({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
 
@@ -19,7 +18,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={lexend.className}>
-        <Navigation />
         <AppKitProvider initialState={initialState}>{children}</AppKitProvider>
       </body>
     </html>
