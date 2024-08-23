@@ -1,37 +1,23 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { staggerContainer, textVariant } from '@/utils/motion';
 import Link from 'next/link';
 import PresaleDashboard from "@/components/PresaleDashboard"
 
 const Hero = () => (
   <section className={``}>
-    <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-      className={`flex flex-col sm:flex-row justify-between items-center container py-32 mx-auto`}
-    >
+    <div className={`flex flex-col sm:flex-row justify-between items-center container py-32 mx-auto`}>
       <div className="relative z-10 flex flex-col gap-y-6 justify-center text-center sm:text-left sm:mb-4 max-sm:items-center">
-        <motion.h1
-          variants={textVariant(1.1)}
-          className="text-3xl sm:text-5xl md:text-7xl max-w-4xl text-gray-50 font-bold"
-        >
+        <h1 className="text-3xl sm:text-5xl md:text-7xl max-w-4xl text-gray-50 font-bold">
           Earn, Stake and Burn with EXCoin: <br/> <span className="text-[#14919B]">Join the Movement</span> 
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          variants={textVariant(1.3)}
-          className="text-base sm:text-lg md:text-xl max-w-3xl mt-2 text-gray-100 mb-2"
-        >
-          EXCoin — An SPL token with a deflationary edge, seamlessly integrated into Ethereum&apos;s DeFi landscape. 
+        <p className="text-base sm:text-lg md:text-xl max-w-3xl mt-2 text-gray-100 mb-2">
+          EXCoin — An SPL token with a deflationary edge, seamlessly integrated into Solana&apos;s DeFi landscape. 
           Stake your tokens for passive income, diversify your investments, and set out on your journey toward financial growth. 
-        </motion.p>
+        </p>
 
         <div className='flex flex-col sm:flex-row items-center gap-4'>
-          <motion.div variants={textVariant(1.4)} className='flex items-center'>
+          <div className='flex items-center'>
             <Link href={"/"} className='flex items-center gap-x-2 text-white border-[#0b6477] transition-all duration-300 ease-in-out border bg-[#0b6477] hover:text-[#14919B] hover:bg-transparent p-3 px-4 rounded-full'>
               <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_1_10143)"><path d="M8.00081 4.16675H6.33415C5.89212 4.16675 5.4682 4.34234 5.15564 4.6549C4.84308 4.96746 4.66748 5.39139 4.66748 5.83341V15.8334C4.66748 16.2754 4.84308 16.6994 5.15564 17.0119C5.4682 17.3245 5.89212 17.5001 6.33415 17.5001H14.6675C15.1095 17.5001 15.5334 17.3245 15.846 17.0119C16.1586 16.6994 16.3341 16.2754 16.3341 15.8334V5.83341C16.3341 5.39139 16.1586 4.96746 15.846 4.6549C15.5334 4.34234 15.1095 4.16675 14.6675 4.16675H13.0008" stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"></path><path d="M8.00012 4.16667C8.00012 3.72464 8.17572 3.30072 8.48828 2.98816C8.80084 2.67559 9.22476 2.5 9.66679 2.5H11.3335C11.7755 2.5 12.1994 2.67559 12.512 2.98816C12.8245 3.30072 13.0001 3.72464 13.0001 4.16667C13.0001 4.60869 12.8245 5.03262 12.512 5.34518C12.1994 5.65774 11.7755 5.83333 11.3335 5.83333H9.66679C9.22476 5.83333 8.80084 5.65774 8.48828 5.34518C8.17572 5.03262 8.00012 4.60869 8.00012 4.16667Z" stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"></path><path d="M8.00012 10H13.0001" stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"></path><path d="M8.00012 13.3333H13.0001" stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"></path></g><defs><clipPath id="clip0_1_10143"><rect width="20" height="20" fill="white" transform="translate(0.5)"></rect></clipPath></defs></svg>
               Whitepaper
@@ -39,9 +25,9 @@ const Hero = () => (
             <Link href={"/another"} className='flex items-center gap-x-2 text-white border-[#0b6477] bg-[#0b6477] transition-all duration-300 ease-in-out border hover:text-[#14919B] hover:bg-transparent p-2 rounded-full'>
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.32526 23.7844L23.7251 6.38458" stroke="currentColor" strokeWidth="1.31611" strokeMiterlimit="10" strokeLinecap="square"/><path d="M12.1422 6.6604C18.297 11.7437 23.4077 6.05591 23.4077 6.05591" stroke="currentColor" strokeWidth="1.31611" strokeMiterlimit="10" strokeLinecap="square"/><path d="M23.4559 17.9739C18.3727 11.8191 24.0604 6.70833 24.0604 6.70833" stroke="currentColor" strokeWidth="1.31611" strokeMiterlimit="10" strokeLinecap="square"/></svg>
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.ul variants={textVariant(1.5)} className="flex items-center flex-wrap gap-2">
+          <ul className="flex items-center flex-wrap gap-2">
             <li className='bg-[#131327] text-white text-sm transitional duration-200 ease-in-out hover:bg-[#0b6477] p-3 rounded-full'>
               <a className="d-flex items-center justify-content-center text-xs rounded-pill" title="Twitter" href="https://twitter.com/AitikChain" target="_blank">
                 <svg className="custom-svg" width="20" height="20" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,14 +56,14 @@ const Hero = () => (
                 </svg>
               </a>
             </li>
-          </motion.ul>
+          </ul>
         </div>
       </div>
 
       <div className='relative z-0 sm:pl-6 pl-0 mt-6 sm:mt-0 max-w-xl flex items-center'>
         <PresaleDashboard />
       </div>
-    </motion.div>
+    </div>
   </section>
 );
 

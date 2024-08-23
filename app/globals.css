@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,11 +98,11 @@ p.banner-text::before {
 }
 
 .glassmorphism {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: rgba(26, 27, 35, .25);
+  box-shadow: 0 8px 10px 0 rgba(69, 223, 177, .2);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(69, 223, 177, .4);
 }
 
 .gradient-03 {
@@ -109,7 +111,7 @@ p.banner-text::before {
   height: 800px;
   left: 20%;
   top: 5%;
-  background: rgba(149, 66, 232, 0.35);
+  background: rgba(33, 58, 87, .25);
   filter: blur(175px);
   transform: rotate(-114.2deg);
 }
@@ -153,4 +155,38 @@ p.banner-text::before {
 
   background: #65c4fa;
   filter: blur(150px);
+}
+
+.custom-size {
+  font-family: 'Space Grotesk', 'Outfit', Arial, sans-serif;
+}
+
+.roadmap-box::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  width: 1900px;
+  height: 6px;
+  background: #2C2C3F;
+  margin-top: 24px;
+}
+
+.roadmap:nth-child(2n) {
+  top: -45px;
+  position: relative;
+  flex-direction: column-reverse;
+}
+
+.roadmap:nth-child(2n) .pin {
+  transform: scaleY(-1);
+}
+
+.roadmap:nth-child(2n+1) {
+  top: 100px;
+  position: relative;
+}
+
+.answer {
+  background: linear-gradient(180deg, #171222 0%, #451C66 100%);
 }

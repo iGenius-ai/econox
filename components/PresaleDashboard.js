@@ -1,30 +1,28 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { useWeb3Modal } from '@web3modal/wagmi/react';
 import { ChevronDown } from 'lucide-react';
+import TokenInput from './parts/TokenInput';
 
 const PresaleDashboard = () => {
   const { open } = useWeb3Modal();
-  const [paymentAmount, setPaymentAmount] = useState('');
-  const [receiveAmount, setReceiveAmount] = useState('');
+  const [selectedToken, setSelectedToken] = useState('BNB');
+
+  const handleTokenSelect = (token) => {
+    setSelectedToken(token);
+  };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="border bg-[#101118] border-[#213a57] shadow-[#213a57] overflow-hidden rounded-lg w-full sm:w-96 max-w-md min-w-80 mx-auto text-white shadow-lg"
-    >
+    <div className="border bg-[#101118] border-[#213a57] shadow-[#213a57] overflow-hidden rounded-lg w-full sm:w-96 max-w-md min-w-80 mx-auto text-white shadow-lg">
       <div>
-        <div className="space-y-4 p-6 bg-[#1a1b23] rounded-b-2xl">
+        <div className="space-y-3 p-6 bg-[#1a1b23] rounded-b-2xl">
           <div className="text-center">
             <p className="text-sm text-purple-300">Stage - Phase 1</p>
             <h2 className="text-xl font-bold mb-2">Presale is live</h2>
             <p className="text-xs text-gray-400">EX Coin is Registered Company</p>
           </div>
 
-          <div className="bg-[#272833] rounded-full h-4 w-full">
-            <div className="bg-[#0b6477] h-4 rounded-full" style={{ width: '30%' }}></div>
+          <div className="bg-[#272833] rounded-full h-3 w-full">
+            <div className="bg-[#0b6477] h-3 rounded-full" style={{ width: '30%' }}></div>
           </div>
           <p className="text-xs text-right text-gray-400">Until Next price: $0.04</p>
 
@@ -42,46 +40,27 @@ const PresaleDashboard = () => {
           </div>
 
           <div className="flex justify-between space-x-2 mb-4">
-            {['BNB', 'USDT', 'CARD'].map((method) => (
+            {['SOL', 'USDT'].map((method) => (
               <button
-                key={method}
-                className="flex-1 bg-[#3a3b46] border border-[#0b6477] hover:bg-[#4a4b56] text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+              key={method}
+                className={`flex-1 bg-[#3a3b46] border ${
+                  selectedToken === method ? 'border-[#0b6477]' : 'border-transparent'
+                } hover:bg-[#4a4b56] text-white font-bold py-2 px-4 rounded-lg transition duration-300`}
+                onClick={() => handleTokenSelect(method)}
               >
                 {method}
               </button>
             ))}
           </div>
 
-          <div className="flex justify-between items-center bg-[#272833] rounded-lg p-4">
-            <div>
-              <p className="text-xs text-gray-400 mb-1">Amount in BNB you pay</p>
-              <input
-                type="text"
-                value={paymentAmount}
-                onChange={(e) => setPaymentAmount(e.target.value)}
-                className="bg-transparent text-white text-lg font-bold w-28 focus:outline-none"
-                placeholder="0"
-              />
+          <div className="flex flex-col justify-between items-center rounded-lg">
+            <TokenInput label="From" IconComponent={selectedToken === 'SOL' ? "/solana.png" : "/usdt.png"} />
+            <div className="flex justify-center my-2">
+              <div className="bg-[#0b6477] p-2 rounded-full">
+                <ChevronDown className="text-white" size={16} />
+              </div>
             </div>
-            <div className="bg-yellow-500 rounded-full p-1 px-2">
-              <span className="font-bold">B</span>
-            </div>
-          </div>
-
-          <div className="flex justify-between items-center bg-[#272833] rounded-lg p-4">
-            <div>
-              <p className="text-xs text-gray-400 mb-1">Amount in EXCOIN you receive</p>
-              <input
-                type="text"
-                value={receiveAmount}
-                onChange={(e) => setReceiveAmount(e.target.value)}
-                className="bg-transparent text-white text-lg font-bold w-28 focus:outline-none"
-                placeholder="0"
-              />
-            </div>
-            <div className="bg-[#0b6477] rounded-full p-1 px-2">
-              <span className="font-bold">E</span>
-            </div>
+            <TokenInput label="To" IconComponent={"/coin.svg"} />
           </div>
 
           <button
@@ -92,7 +71,7 @@ const PresaleDashboard = () => {
           </button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
