@@ -5,26 +5,26 @@ import TokenInput from './parts/TokenInput';
 
 const PresaleDashboard = () => {
   const { open } = useWeb3Modal();
-  const [selectedToken, setSelectedToken] = useState('BNB');
+  const [selectedToken, setSelectedToken] = useState('SOL');
 
   const handleTokenSelect = (token) => {
     setSelectedToken(token);
   };
 
   return (
-    <div className="border bg-[#101118] border-[#213a57] shadow-[#213a57] overflow-hidden rounded-lg w-full sm:w-96 max-w-md min-w-80 mx-auto text-white shadow-lg">
+    <div className="border custom-size bg-[#101118] border-[#213a57] shadow-[#213a57] overflow-hidden rounded-lg w-full sm:w-96 max-w-md min-w-80 mx-auto text-white shadow-lg">
       <div>
         <div className="space-y-3 p-6 bg-[#1a1b23] rounded-b-2xl">
           <div className="text-center">
             <p className="text-sm text-purple-300">Stage - Phase 1</p>
-            <h2 className="text-xl font-bold mb-2">Presale is live</h2>
+            <h2 className="text-lg sm:text-xl font-bold mb-2">Presale is live</h2>
             <p className="text-xs text-gray-400">EX Coin is Registered Company</p>
           </div>
 
           <div className="bg-[#272833] rounded-full h-3 w-full">
             <div className="bg-[#0b6477] h-3 rounded-full" style={{ width: '30%' }}></div>
           </div>
-          <p className="text-xs text-right text-gray-400">Until Next price: $0.04</p>
+          <p className="text-[10px] text-right text-gray-400">Until Next price: $0.04</p>
 
           <div className="space-y-2 text-sm max-w-2xl">
             <p>Wallet Address: <span className="text-purple-300">Unlock wallet</span></p>
@@ -35,7 +35,7 @@ const PresaleDashboard = () => {
         </div>
 
         <div className='space-y-4 p-6 pt-2'>
-          <div className="text-center text-xl font-bold my-4">
+          <div className="text-center text-lg font-semibold my-4">
             1 EXCOIN = $0.02
           </div>
 
@@ -44,7 +44,7 @@ const PresaleDashboard = () => {
               <button
               key={method}
                 className={`flex-1 bg-[#3a3b46] border ${
-                  selectedToken === method ? 'border-[#0b6477]' : 'border-transparent'
+                  selectedToken === method ? 'border-[#0b6477] bg-[#0B6477]' : 'border-transparent'
                 } hover:bg-[#4a4b56] text-white font-bold py-2 px-4 rounded-lg transition duration-300`}
                 onClick={() => handleTokenSelect(method)}
               >
@@ -65,7 +65,7 @@ const PresaleDashboard = () => {
 
           <button
             onClick={() => open({ view: 'Connect' })}
-            className="w-full bg-[#0b6477] hover:bg-[#0b6477] text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+            className="w-full bg-[#0b6477] hover:bg-[#0b6477] text-white font-semibold py-3 px-4 rounded-lg transition duration-300"
           >
             Connect Wallet
           </button>

@@ -9,10 +9,10 @@ const TokenInput = ({ label, IconComponent }) => {
         <span className="text-gray-400 text-sm">{label}</span>
         <span className="text-gray-400 text-sm">Max 50%</span>
       </div>
-      <div className="flex justify-between items-center p-4">
+      <div className="flex justify-between items-center p-3">
         <input
           type="text"
-          className="bg-transparent text-white text-2xl font-bold w-full focus:outline-none"
+          className="bg-transparent text-white text-xl font-medium w-full focus:outline-none"
           placeholder="0"
         />
         <div

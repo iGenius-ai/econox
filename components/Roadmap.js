@@ -52,7 +52,7 @@ const RoadmapItem = ({ title, description, percentage, status, index }) => (
         <Image alt="Pin Icon" loading="lazy" width={10} height={10} decoding="async" className='pin text-transparent w-auto h-auto' src="/round-pin.svg"/>
       </div>
       <p className='text-lg font-bold mb-3'>{title}</p>
-      <div>{description}</div>
+      <div className='custom-size'>{description}</div>
     </div>
   </div>
 );
@@ -60,7 +60,7 @@ const RoadmapItem = ({ title, description, percentage, status, index }) => (
 const Roadmap = () => {
   return (
     <div className="w-full py-12 overflow-hidden mb-10">
-      <h2 className="text-3xl font-bold text-center text-white">Econox Project Roadmap</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-center text-white">Our Project Roadmap</h2>
       <div className="float-left w-full overflow-x-auto overflow-y-hidden py-10 px-10 relative mt-4 mb-5 scroll-smooth roadmap-box">
         <div className="float-left w-[1840px] relative mx-auto flex z-40 h-[30rem]">
           {roadmapData.map((item, index) => (

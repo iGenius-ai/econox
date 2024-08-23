@@ -43,7 +43,7 @@ const AccordionItem = ({ faq, isOpen, toggle }) => {
         }`}
         onClick={toggle}
       >
-        <span className="font-semibold text-base sm:text-xl">{faq.question}</span>
+        <span className="font-medium text-base sm:text-xl">{faq.question}</span>
         <span className="ml-4">{isOpen ? "▲" : "▼"}</span>
       </button>
       <div

@@ -5,7 +5,7 @@ import PresaleDashboard from "@/components/PresaleDashboard"
 
 const Hero = () => (
   <section className={``}>
-    <div className={`flex flex-col sm:flex-row justify-between items-center container py-32 mx-auto`}>
+    <div className={`flex flex-col sm:flex-row justify-between items-center container py-28 mx-auto`}>
       <div className="relative z-10 flex flex-col gap-y-6 justify-center text-center sm:text-left sm:mb-4 max-sm:items-center">
         <h1 className="text-3xl sm:text-5xl md:text-7xl max-w-4xl text-gray-50 font-bold">
           Earn, Stake and Burn with EXCoin: <br/> <span className="text-[#14919B]">Join the Movement</span> 

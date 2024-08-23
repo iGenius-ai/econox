@@ -7,10 +7,12 @@ import Image from 'next/image'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 const links = [
+  { href: '/staking', label: 'Staking' },
+  { href: '/roadmaps', label: 'Roadmap' },
   { href: '/about', label: 'About' },
-  { href: '/roadmaps', label: 'Our Roadmap' },
   { href: '/features', label: 'Features' },
   { href: '/faq', label: 'FAQ' },
+  { href: '/vesting', label: 'Vesting' },
 ]
 
 export default function Navigation() {
@@ -44,7 +46,6 @@ export default function Navigation() {
             <Image src={"/metadroid-fav.png"} alt='Brand Logo' width={60} height={60} className='object-cover' />
             <div className='uppercase ml-2'>
               <p className='text-lg'>Excoin</p>
-              
             </div>
           </Link>
 
@@ -101,23 +102,22 @@ export default function Navigation() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed top-0 right-0 bottom-0 w-lvw bg-[#101118]/80 backdrop-blur-[5px] z-50 md:hidden overflow-y-auto"
+            className="fixed top-[92px] right-0 w-lvw bg-[#101118]/95 backdrop-blur-[5px] z-50 md:hidden overflow-y-auto"
           >
-            <div className="p-4 flex flex-col">
-              <button onClick={() => setIsOpen(false)} className="mb-20 text-gray-200">
+            <div className="p-4 pb-10 flex flex-col">
+              {/* <button onClick={() => setIsOpen(false)} className="mb-10 ml-2 text-gray-200">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
               </button>
-              <br /> <br />
-              <div className="">
-                {links.map(({ href, label, icon }, index) => (
+              <br /> <br /> */}
+              <div className="mt-4">
+                {links.map(({ href, label }, index) => (
                   <motion.div
                     key={href}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className='text-center'
                   >
                     <Link href={href}>
                       <motion.div
