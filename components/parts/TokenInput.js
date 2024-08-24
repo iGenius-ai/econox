@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-const TokenInput = ({ label, IconComponent }) => {
+const TokenInput = ({ label, IconComponent, tokenLabel }) => {
   return (
     <div className="bg-[#272833] rounded-xl">
       <div className="flex justify-between bg-[#10111881] p-4 py-3 items-center">
@@ -15,10 +15,13 @@ const TokenInput = ({ label, IconComponent }) => {
           className="bg-transparent text-white text-xl font-medium w-full focus:outline-none"
           placeholder="0"
         />
-        <div
-          className="flex items-center bg-[#4a4b56] rounded-full overflow-hidden"
-        >
-          <Image src={IconComponent} width={35} height={35} alt={label} />
+        <div className="flex items-center bg-[#4a4b56] rounded-full p-1 pr-2 gap-x-1">
+          <div
+            className="flex items-center overflow-hidden rounded-full"
+          >
+            <Image src={IconComponent} width={40} height={40} alt={label} />
+          </div>
+          <p className="text-[#f5f5f5] text-sm">{tokenLabel}</p>
         </div>
       </div>
     </div>

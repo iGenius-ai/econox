@@ -190,3 +190,19 @@ p.banner-text::before {
 .answer {
   background: linear-gradient(180deg, #171222 0%, #451C66 100%);
 }
+
+.stats-group::after {
+  background: #213a57;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.stats-group:hover::after {
+  top: 0;
+}

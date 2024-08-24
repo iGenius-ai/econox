@@ -45,7 +45,7 @@ const PresaleDashboard = () => {
               key={method}
                 className={`flex-1 bg-[#3a3b46] border ${
                   selectedToken === method ? 'border-[#0b6477] bg-[#0B6477]' : 'border-transparent'
-                } hover:bg-[#4a4b56] text-white font-bold py-2 px-4 rounded-lg transition duration-300`}
+                } hover:bg-[#0B6477] text-white font-bold py-2 px-4 rounded-lg transition duration-300`}
                 onClick={() => handleTokenSelect(method)}
               >
                 {method}
@@ -54,13 +54,13 @@ const PresaleDashboard = () => {
           </div>
 
           <div className="flex flex-col justify-between items-center rounded-lg">
-            <TokenInput label="From" IconComponent={selectedToken === 'SOL' ? "/solana.png" : "/usdt.png"} />
+            <TokenInput label="From" tokenLabel={selectedToken === 'SOL' ? "SOL" : "USDT"} IconComponent={selectedToken === 'SOL' ? "/solana.png" : "/usdt.png"} />
             <div className="flex justify-center my-2">
               <div className="bg-[#0b6477] p-2 rounded-full">
                 <ChevronDown className="text-white" size={16} />
               </div>
             </div>
-            <TokenInput label="To" IconComponent={"/coin.svg"} />
+            <TokenInput label="To" tokenLabel={"EXC"} IconComponent={"/coin.svg"} />
           </div>
 
           <button

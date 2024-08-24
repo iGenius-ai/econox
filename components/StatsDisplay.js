@@ -2,10 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 
 const StatsItem = ({ icon, value, label }) => (
-  <div className="glassmorphism rounded-lg p-6 py-6 md:py-10 w-[47%] md:w-[24%] flex flex-col items-center justify-center text-center">
-    <Image src={icon} width={100} height={100} alt='Person' className='w-[45px]' />
-    <h3 className="text-xl md:text-4xl custom-size font-bold text-white mt-5 mb-1">{value}</h3>
-    <p className="text-sm md:text-lg text-gray-400">{label}</p>
+  <div className="relative overflow-hidden border border-[#0b6477] stats-group rounded-lg p-6 py-6 md:py-10 w-[47%] md:w-[24%] flex flex-col items-center justify-center text-center group">
+    <Image src={icon} width={100} height={100} alt='Person' className='w-[45px] z-10' />
+    <h3 className="text-xl md:text-3xl custom-size font-bold text-white mt-5 mb-1 z-10">{value}</h3>
+    <p className="text-sm md:text-base text-gray-400 z-10">{label}</p>
   </div>
 );
 
