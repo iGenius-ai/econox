@@ -8,7 +8,7 @@ const FeatureCard = ({ title, description, icon: Icon }) => (
       <p className="text-gray-400 custom-size text-sm md:text-lg flex-grow">{description}</p>
     </div>
     <div className="">
-      <Icon className="text-[#0b6477] w-20 h-20 sm:w-28 sm:h-28" color={"#45DFB1"} />
+      <Icon className="text-[#0b6477] w-20 h-20 sm:w-28 sm:h-28" />
     </div>
   </div>
 );

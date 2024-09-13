@@ -93,11 +93,11 @@ p.banner-text::before {
 }
 
 .glassmorphism {
-  background: rgba(26, 27, 35, .25);
-  box-shadow: 0 8px 10px 0 rgba(69, 223, 177, .2);
+  background: rgba(11, 99, 119, 0.112);
+  box-shadow: 0 8px 10px 0 rgba(11, 100, 119, .2);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(69, 223, 177, .4);
+  border: 1px solid rgba(11, 100, 119, .4);
 }
 
 .gradient-03 {
@@ -183,11 +183,11 @@ p.banner-text::before {
 }
 
 .answer {
-  background: linear-gradient(180deg, #171222 0%, #451C66 100%);
+  background: linear-gradient(180deg, #171222 0%, #0b6477 100%);
 }
 
 .stats-group::after {
-  background: #213a57;
+  background: black;
   content: "";
   height: 100%;
   width: 100%;

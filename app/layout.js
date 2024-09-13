@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={space.className}>
+      <body className={`${space.className} px-6`}>
         <AppKitProvider initialState={initialState}>
           <Navigation />
           {children}

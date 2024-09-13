@@ -83,7 +83,7 @@ const PresaleDashboard = () => {
           ))}
         </div>
 
-        <div className="flex flex-col justify-between items-center rounded-lg">
+        {/* <div className="flex flex-col justify-between items-center rounded-lg">
           <TokenInput label="From" tokenLabel={selectedToken === 'SOL' ? 'SOL' : 'USDT'} IconComponent={selectedToken === 'SOL' ? '/solana.png' : '/usdt.png'} />
           <div className="flex justify-center my-2">
             <div className="bg-[#0b6477] p-2 rounded-full">
@@ -91,7 +91,7 @@ const PresaleDashboard = () => {
             </div>
           </div>
           <TokenInput label="To" tokenLabel="EXC" IconComponent="/coin.svg" />
-        </div>
+        </div> */}
 
         <button
         onClick={() => open({ view: 'Connect' })}
