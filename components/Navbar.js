@@ -8,7 +8,7 @@ import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 const links = [
   { href: '/staking', label: 'Staking' },
-  { href: '/roadmaps', label: 'Roadmap' },
+  { href: '/roadmap', label: 'Roadmap' },
   { href: '/about', label: 'About' },
   { href: '/features', label: 'Features' },
   { href: '/faq', label: 'FAQ' },
@@ -34,8 +34,8 @@ export default function Navigation() {
         initial={false}
         animate={isScrolled ? "scrolled" : "top"}
         variants={{
-          top: { backgroundColor: "rgba(0, 0, 0, 0)", boxShadow: "none" },
-          scrolled: { backgroundColor: "rgba(0, 0, 0, 0.9)", boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)" }
+          top: { backgroundColor: "rgba(0, 0, 0, 0)", boxShadow: "0 2px 10px rgba(0, 0, 0, 0.4)" },
+          scrolled: { backgroundColor: "rgba(0, 0, 0, 0.9)", boxShadow: "0 2px 10px rgba(0, 0, 0, 0.4)" }
         }}
         transition={{ duration: 0.3 }}
         className="fixed top-0 left-0 right-0 z-50 p-4 backdrop-blur-[7px]"

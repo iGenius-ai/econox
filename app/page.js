@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero"
-import Navigation from "@/components/Navbar";
 import StatsDisplay from "@/components/StatsDisplay";
 import WhatsNew from "@/components/WhatsNew";
 import Roadmap from "@/components/Roadmap";
@@ -10,7 +9,6 @@ export default function Home() {
   return (
     <main>
       <div className="overflow-hidden px-4">
-        <Navigation />
         <Hero />
 
         <div className="relative">

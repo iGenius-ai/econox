@@ -14,7 +14,7 @@ const PresaleDashboard = () => {
   };
 
   useEffect(() => {
-    const targetDate = new Date("2024-08-24T23:50:00"); // Replace with your target date
+    const targetDate = new Date("2024-09-14T23:50:00"); // Replace with your target date
     const countdownInterval = setInterval(() => {
       const now = new Date();
       const timeRemaining = targetDate - now;
