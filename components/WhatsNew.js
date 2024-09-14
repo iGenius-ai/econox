@@ -39,7 +39,7 @@ const AccordionItem = ({ faq, isOpen, toggle }) => {
     >
       <button
         className={`w-full text-left p-8 py-6 focus:outline-none flex justify-between items-center ${
-          isOpen ? "rounded-t-xl bg-transparent" : "rounded-xl bg-[#0b6477]"
+          isOpen ? "rounded-t-xl bg-transparent" : "rounded-xl bg-[##213a57]"
         }`}
         onClick={toggle}
       >

@@ -5,10 +5,6 @@ import React from "react";
 const TokenInput = ({ label, IconComponent, tokenLabel }) => {
   return (
     <div className="bg-[#272833] rounded-xl">
-      <div className="flex justify-between bg-[#10111881] p-4 py-3 items-center">
-        <span className="text-gray-400 text-sm">{label}</span>
-        <span className="text-gray-400 text-sm">Max 50%</span>
-      </div>
       <div className="flex justify-between items-center p-3">
         <input
           type="text"
