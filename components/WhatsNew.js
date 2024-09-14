@@ -43,7 +43,7 @@ const AccordionItem = ({ faq, isOpen, toggle }) => {
         }`}
         onClick={toggle}
       >
-        <span className="font-medium text-base sm:text-xl">{faq.question}</span>
+        <span className="font-medium text-sm sm:text-lg">{faq.question}</span>
         <span className="ml-4">{isOpen ? "▲" : "▼"}</span>
       </button>
       <div
@@ -54,7 +54,7 @@ const AccordionItem = ({ faq, isOpen, toggle }) => {
         }}
         className="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
       >
-        <div className="p-8 pt-0 text-sm sm:text-lg text-gray-200 custom-size">{faq.answer}</div>
+        <div className="p-8 pt-0 text-sm sm:text-base text-gray-200 custom-size">{faq.answer}</div>
       </div>
     </div>
   );

@@ -85,7 +85,7 @@ export default function Navigation() {
 
             <button
               onClick={() => open({ view: 'Connect' })}
-              className="transition duration-300 ease-in-out gap-x-1 text-white hover:bg-[#1a1b23] bg-[#0b6477] p-3 px-4 rounded-lg"
+              className="transition duration-300 text-sm font-medium ease-in-out gap-x-1 text-white hover:bg-[#1a1b23] bg-[#0b6477] p-2 px-4 rounded-lg"
             >
               Connect
             </button>
