@@ -6,13 +6,13 @@ import PresaleDashboard from "@/components/PresaleDashboard"
 const Hero = () => (
   <section className={``}>
     <div className={`flex flex-col sm:flex-row justify-center items-center container py-28 mx-auto`}>
-      <div className="relative z-10 flex flex-col gap-y-6 justify-center text-center sm:text-left sm:mb-4 max-sm:items-center">
+      <div className="relative z-10 flex flex-col gap-y-4 md:gap-y-6 justify-center text-center sm:text-left sm:mb-4 max-sm:items-center">
         <h1 className="text-4xl sm:text-5xl md:text-[5rem] max-w-4xl text-gray-50 font-bold">
-          Earn, Stake and Burn with EXCoin: <br/> <span className="text-[#14919B]">Join the Movement</span> 
+          Earn, Stake and Burn with Econox: <br/> <span className="text-[#14919B]">Join the Movement</span> 
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl max-w-3xl mt-2 text-gray-100 mb-2">
-          EXCoin — An SPL token with a deflationary edge, seamlessly integrated into Solana&apos;s DeFi landscape. 
+        <p className="text-base sm:text-lg md:text-xl max-w-3xl mt-0 text-gray-100">
+          Econox — An SPL token with a deflationary edge, seamlessly integrated into Solana&apos;s DeFi landscape. 
           Stake your tokens for passive income, diversify your investments, and set out on your journey toward financial growth. 
         </p>
 
