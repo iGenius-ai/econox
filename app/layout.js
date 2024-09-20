@@ -1,10 +1,10 @@
 import { Syne, Space_Grotesk } from "next/font/google";
-import AppKitProvider from "@/context/WagmiContext"
 import "./globals.css";
-import { cookieToInitialState } from "wagmi";
+import { cookieToInitialState } from 'wagmi'
 import { headers } from "next/headers";
 import { config } from "@/config/config";
 import Navigation from "@/components/Navbar";
+import Web3ModalProvider from "@/context/WagmiContext";
 
 const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 const space = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
@@ -23,10 +23,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${space.className} px-2.5`}>
-        <AppKitProvider initialState={initialState}>
+        <Web3ModalProvider initialState={initialState}>
           <Navigation />
           {children}
-        </AppKitProvider>
+        </Web3ModalProvider>
       </body>
     </html>
   );

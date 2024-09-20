@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useWeb3Modal } from '@web3modal/wagmi/react';
+// import { useWeb3Modal } from '@web3modal/wagmi/react';
 import { ChevronDown } from 'lucide-react';
 import TokenInput from './parts/TokenInput';
 
 const PresaleDashboard = () => {
-  const { open } = useWeb3Modal();
+  // const { open } = useWeb3Modal();
   const [selectedToken, setSelectedToken] = useState('SOL');
   const [timeLeft, setTimeLeft] = useState({});
   const [percentage, setPercentage] = useState(0);
@@ -93,12 +93,13 @@ const PresaleDashboard = () => {
           <TokenInput tokenLabel="EXC" IconComponent="/coin.svg" />
         </div>
 
-        <button
+        {/* <button
         onClick={() => open({ view: 'Connect' })}
         className="w-full bg-[#0b6477] hover:bg-[#0b6477] text-white font-semibold py-3 px-4 rounded-lg transition duration-300"
         >
           Connect Wallet
-        </button>
+        </button> */}
+        <w3m-button style={{width: "100% !important"}} />
       </div>
     </div>
   </div>

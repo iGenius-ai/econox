@@ -8,6 +8,18 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --w3m-color-mix: #fff;
+  --w3m-accent: #0b6477 !important;
+  --w3m-default: #fff;
+  --w3m-border-radius-master: 4px;
+  --wui-color-modal-bg-base: #121313;
+  --wui-color-accent-base-100: var(--w3m-accent);
+  --wui-border-radius-m: calc(var(--w3m-border-radius-master) * 2) !important;
+}
+
+button[data-size='md'] {
+  padding: 9px var(--wui-spacing-l) 9px var(--wui-spacing-l);
+  width: 100% !important;
 }
 
 @media (prefers-color-scheme: dark) {

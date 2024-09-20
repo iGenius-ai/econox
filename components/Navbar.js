@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { useWeb3Modal } from '@web3modal/wagmi/react'
+// import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 const links = [
   { href: '/staking', label: 'Staking' },
@@ -16,7 +16,7 @@ const links = [
 ]
 
 export default function Navigation() {
-  const { open } = useWeb3Modal();
+  // const { open } = useWeb3Modal();
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
@@ -83,12 +83,13 @@ export default function Navigation() {
               </Link>
             </div>
 
-            <button
+            {/* <button
               onClick={() => open({ view: 'Connect' })}
               className="transition duration-300 text-sm font-medium ease-in-out gap-x-1 text-white hover:bg-[#1a1b23] bg-[#0b6477] p-2 px-4 rounded-lg"
             >
               Connect
-            </button>
+            </button> */}
+            <w3m-button label='Connect' />
 
             <div className={`md:hidden ${isScrolled ? "text-[#0ad1c8]" : "text-gray-100"}`}>   
               <button onClick={() => setIsOpen(!isOpen)} className="p-2">
