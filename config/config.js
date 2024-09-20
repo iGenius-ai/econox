@@ -9,7 +9,7 @@ export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
 const metadata = {
   name: 'EXCoin',
   description: 'ExCoin Website',
-  url: 'https://econox.vercel.app', // origin must match your domain & subdomain
+  url: 'https://econox.vercel.app/', // origin must match your domain & subdomain
   icons: ['https://assets.reown.com/reown-profile-pic.png']
 }
 
