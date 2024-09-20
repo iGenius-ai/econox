@@ -8,8 +8,8 @@ export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
 // Create a metadata object
 const metadata = {
   name: 'EXCoin',
-  description: 'AppKit Example',
-  url: 'https://reown.com/appkit', // origin must match your domain & subdomain
+  description: 'ExCoin Website',
+  url: 'https://econox.vercel.app', // origin must match your domain & subdomain
   icons: ['https://assets.reown.com/reown-profile-pic.png']
 }
 

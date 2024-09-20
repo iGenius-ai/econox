@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from 'react';
-// import { useWeb3Modal } from '@web3modal/wagmi/react';
+import { useWeb3Modal } from '@web3modal/wagmi/react';
 import { ChevronDown } from 'lucide-react';
 import TokenInput from './parts/TokenInput';
+import { useAccount, useDisconnect } from 'wagmi';
+
+// Function to truncate the address
+const truncateAddress = (address) => {
+  if (!address) return '';
+  const start = address.slice(0, 6);
+  const end = address.slice(-4);
+  return `${start}...${end}`;
+};
 
 const PresaleDashboard = () => {
-  // const { open } = useWeb3Modal();
+  const { open } = useWeb3Modal();
+  const { address, isConnected } = useAccount();
+  const { disconnect } = useDisconnect();
   const [selectedToken, setSelectedToken] = useState('SOL');
   const [timeLeft, setTimeLeft] = useState({});
   const [percentage, setPercentage] = useState(0);
@@ -93,13 +104,21 @@ const PresaleDashboard = () => {
           <TokenInput tokenLabel="EXC" IconComponent="/coin.svg" />
         </div>
 
-        {/* <button
-        onClick={() => open({ view: 'Connect' })}
-        className="w-full bg-[#0b6477] hover:bg-[#0b6477] text-white font-semibold py-3 px-4 rounded-lg transition duration-300"
-        >
-          Connect Wallet
-        </button> */}
-        <w3m-button style={{width: "100% !important"}} />
+        {isConnected ? (
+          <button
+            onClick={() => open({ view: 'Account' })}
+            className="w-full bg-[#0b6477] hover:bg-[#0b6477] text-white font-semibold py-3 px-4 rounded-lg transition duration-300"
+          >
+            {address && truncateAddress(address)}
+          </button>
+        ) : (
+          <button
+            onClick={() => open({ view: 'Connect' })}
+            className="w-full bg-[#0b6477] hover:bg-[#0b6477] text-white font-semibold py-3 px-4 rounded-lg transition duration-300"
+          >
+            Connect
+          </button>
+        )}
       </div>
     </div>
   </div>
