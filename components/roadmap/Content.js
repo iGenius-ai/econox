@@ -3,7 +3,7 @@ import React from 'react'
 const Content = () => {
   return (
     <div className='py-16 pt-28 px-4 lg:px-16 mx-auto max-w-screen-lg'>
-      <h2 className='text-2xl lg:text-4xl font-extrabold text-center mb-12'>
+      <h2 className='text-[22px] lg:text-4xl font-extrabold text-center mb-12'>
         ECONOX Token Roadmap
       </h2>
 
@@ -107,7 +107,7 @@ const Section = ({ title, details }) => (
     {details.map(({ subtitle, content }, index) => (
       <div key={index} className='mb-8'>
         <p className='text-xl font-semibold'>{subtitle}</p>
-        <p className='text-base mt-2'>{content}</p>
+        <p className='text-sm md:text-base mt-2 text-justify'>{content}</p>
       </div>
     ))}
   </div>

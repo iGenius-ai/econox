@@ -13,7 +13,7 @@ const StatsDisplay = () => {
   const stats = [
     { icon: '/man.png', value: '4M+', label: 'Registered Users' },
     { icon: '/downloading.png', value: '1M+', label: 'PlayStore Downloads' },
-    { icon: '/finance.png', value: '97M+', label: 'Distributed (EXCOIN)' },
+    { icon: '/finance.png', value: '97M+', label: 'Distributed (ENX)' },
     { icon: '/planet-earth.png', value: '123+', label: 'Countries' },
   ];
 

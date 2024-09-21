@@ -45,9 +45,9 @@ export default function Navigation() {
         <div className="container mx-auto flex justify-between items-center">
           <div className=''>
             <Link href="/" className={`text-2xl font-bold ${isScrolled ? "text-white" : "text-gray-100"} flex items-center`}>
-              <Image src={"/metadroid-fav.png"} alt='Brand Logo' width={50} height={50} className='object-cover' />
+              <Image src={"/metadroid-fav.png"} alt='Brand Logo' width={40} height={40} className='object-cover' />
               <div className='uppercase ml-2'>
-                <p className='text-lg'>Excoin</p>
+                <p className='text-lg'>ENX</p>
               </div>
             </Link>
           </div>

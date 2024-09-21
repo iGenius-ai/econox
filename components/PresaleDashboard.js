@@ -72,14 +72,14 @@ const PresaleDashboard = () => {
 
         <div className="space-y-2 text-sm max-w-2xl">
           <p>Wallet Address: <span className="text-purple-300">Unlock wallet</span></p>
-          <p>Your Purchased EXCOIN: 0</p>
+          <p>Your Purchased ENX: 0</p>
           <p>Listing Price: $0.2</p>
           <p>USDT Raised: $12722.058</p>
         </div>
       </div>
 
       <div className="space-y-4 p-6 pt-2">
-        <div className="text-center text-lg font-semibold my-4">1 EXCOIN = $0.02</div>
+        <div className="text-center text-lg font-semibold my-4">1 ENX = $0.02</div>
         <div className="flex justify-between space-x-2 mb-4">
           {['SOL', 'USDT'].map((method) => (
             <button
@@ -101,7 +101,7 @@ const PresaleDashboard = () => {
               <ChevronDown className="text-white" size={16} />
             </div>
           </div>
-          <TokenInput tokenLabel="EXC" IconComponent="/coin.svg" />
+          <TokenInput tokenLabel="ENX" IconComponent="/coin.svg" />
         </div>
 
         {isConnected ? (

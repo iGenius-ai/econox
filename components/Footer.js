@@ -43,7 +43,7 @@ const Footer = () => {
         
         {/* Copyright and Links */}
         <p className="text-base custom-size text-purple-200 m-2 mx-4">
-          Copyright © 2024 ExCoin. | <a href="#" className="hover:underline">Terms & Conditions</a> | <a href="#" className="hover:underline">Privacy Policy</a>
+          Copyright © 2024 ENX. | <a href="#" className="hover:underline">Terms & Conditions</a> | <a href="#" className="hover:underline">Privacy Policy</a>
         </p>
       </div>
     </footer>

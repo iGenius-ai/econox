@@ -5,24 +5,21 @@ import { useState, useRef } from "react";
 const faqs = [
   {
     question: "What is made with the money from the funding rounds?",
-    answer: `• 35% will be used to build and upgrade the EX platform, including team recruitment, training, and development costs. \n\n
-    • 50% will be used for branding and marketing efforts for EX, including ongoing promotion and education about the platform and blockchain technology in relevant industry channels. This budget will also be used for various advertising activities to increase the platform's popularity among investors and attract active users. \n\n
-    • 15% will be reserved as a contingency fund to address any unexpected or emergency situations that may arise.`,
+    answer: ["• 35% will be used to build and upgrade the ENX platform, including team recruitment, training, and development costs.",
+    "• 50% will be used for branding and marketing efforts for EX, including ongoing promotion and education about the platform and blockchain technology in relevant industry channels. This budget will also be used for various advertising activities to increase the platform's popularity among investors and attract active users.",
+    "• 15% will be reserved as a contingency fund to address any unexpected or emergency situations that may arise.",]
   },
   {
     question: "Where can I find the Smart Contract?",
-    answer:
-      "You can view the verified Smart Contract here:  Token Name: EX Token Token Symbol: $EX Decimals: 18 Token Type: BEP-20",
+    answer: ["You can view the verified Smart Contract here", "Token Name: ENX Token", "Token Symbol: $ENX", "Decimals: 18", "Token Type: BEP-20",]
   },
   {
-    question: "How do I buy $EX token using a smartphone or tablet?",
-    answer:
-      "You can buy $EX token using a decentralized exchange like Uniswap or through our official app on your smartphone or tablet.",
+    question: "How do I buy $ENX token using a smartphone or tablet?",
+    answer: ["You can buy $ENX token using a decentralized exchange like Uniswap or through our official app on your smartphone or tablet.",]
   },
   {
     question: "How do I set up a software wallet (Metamask, Trustwallet, etc.)?",
-    answer:
-      "To set up a software wallet, download the app from your app store, follow the setup instructions, and make sure to securely store your recovery phrase.",
+    answer: ["To set up a software wallet, download the app from your app store, follow the setup instructions, and make sure to securely store your recovery phrase.",]
   },
 ];
 
@@ -54,7 +51,11 @@ const AccordionItem = ({ faq, isOpen, toggle }) => {
         }}
         className="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
       >
-        <div className="p-8 pt-0 text-sm sm:text-base text-gray-200 custom-size">{faq.answer}</div>
+        <div className="p-8 pt-0 text-sm sm:text-base text-gray-200 custom-size">
+          {faq.answer.map((line, index) => (
+            <p key={index}>{line}</p>
+          ))}
+        </div>
       </div>
     </div>
   );

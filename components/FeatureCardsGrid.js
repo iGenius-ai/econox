@@ -1,14 +1,15 @@
 import React from 'react';
 import { Shield, PiggyBank, TrendingUp, Lock } from 'lucide-react';
+import Image from 'next/image';
 
-const FeatureCard = ({ title, description, icon: Icon }) => (
+const FeatureCard = ({ title, description, imageSrc }) => (
   <div className="glassmorphism rounded-xl p-6 sm:p-10 py-12 sm:py-16 flex items-center justify-between h-full">
     <div>
       <h3 className="text-xl sm:text-3xl font-bold text-white mb-2">{title}</h3>
       <p className="text-gray-400 custom-size text-sm md:text-lg flex-grow">{description}</p>
     </div>
     <div className="">
-      <Icon className="text-[#0b6477] w-20 h-20 sm:w-28 sm:h-28" />
+      <Image src={imageSrc} width={80} height={80} alt='title' className="text-[#0b6477] w-20 h-20 sm:w-28 sm:h-28" />
     </div>
   </div>
 );
@@ -18,22 +19,22 @@ const FeatureCardsGrid = () => {
     {
       title: "Reliable Support",
       description: "24/7 assistance for swift issue resolution.",
-      icon: Shield
+      imageSrc: "/customer-care.png"
     },
     {
       title: "Fast Transactions",
       description: "Seamless operations with minimal delays.",
-      icon: TrendingUp
+      imageSrc: "/transfer.png"
     },
     {
       title: "Low Fees",
       description: "Competitive rates to maximize your returns.",
-      icon: PiggyBank
+      imageSrc: "/savings.png"
     },
     {
       title: "Robust Security",
       description: "Advanced measures to protect your assets and data.",
-      icon: Lock
+      imageSrc: "/padlock.png"
     }
   ];
 
