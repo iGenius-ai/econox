@@ -9,7 +9,7 @@ const FeatureCard = ({ title, description, imageSrc }) => (
       <p className="text-gray-400 custom-size text-sm md:text-lg flex-grow">{description}</p>
     </div>
     <div className="">
-      <Image src={imageSrc} width={80} height={80} alt='title' className="text-[#0b6477] w-20 h-20 sm:w-28 sm:h-28" />
+      <Image src={imageSrc} width={80} height={80} alt='title' className="text-[#0b6477] w-20 h-[70px] sm:w-28 sm:h-28" />
     </div>
   </div>
 );

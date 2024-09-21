@@ -35,7 +35,7 @@ const AccordionItem = ({ faq, isOpen, toggle }) => {
       }`}
     >
       <button
-        className={`w-full text-left p-8 py-6 focus:outline-none flex justify-between items-center ${
+        className={`w-full text-left p-4 md:p-8 py-6 focus:outline-none flex justify-between items-center ${
           isOpen ? "rounded-t-xl bg-transparent" : "rounded-xl bg-[##213a57]"
         }`}
         onClick={toggle}
@@ -51,9 +51,9 @@ const AccordionItem = ({ faq, isOpen, toggle }) => {
         }}
         className="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
       >
-        <div className="p-8 pt-0 text-sm sm:text-base text-gray-200 custom-size">
+        <div className="p-8 px-4 md:px-8 pt-0 text-sm sm:text-base text-gray-200 custom-size">
           {faq.answer.map((line, index) => (
-            <p key={index}>{line}</p>
+            <p key={index} className="mb-2">{line}</p>
           ))}
         </div>
       </div>
