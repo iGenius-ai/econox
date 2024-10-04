@@ -16,19 +16,19 @@ export default function Home() {
           <div className="gradient-03 z-0"></div>
         </div>
 
-        <div className="relative">
+        <div id="roadmap" className="relative">
           <Roadmap />
           <div className="gradient-03 z-0"></div>
         </div>
 
-        <div className="relative">
+        <div id="features" className="relative">
           <FeatureCardsGrid />
-          <div className="gradient-01 z-0"></div>
+          <div id="faq" className="gradient-01 z-0"></div>
           <WhatsNew />
         </div>
-      </div>
 
-      <Footer />
+      </div>
+      <Footer/>
     </main>
   );
 }

@@ -85,7 +85,7 @@ const PresaleDashboard = () => {
             <button
               key={method}
               className={`flex-1 bg-[#3a3b46] border ${
-              selectedToken === method ? 'border-[#0b6477] bg-[#0B6477]' : 'border-transparent'
+                selectedToken === method ? 'border-[#0b6477] bg-[#0B6477]' : 'border-transparent'
               } hover:bg-[#0B6477] text-white font-bold py-2 px-4 rounded-lg transition duration-300`}
               onClick={() => handleTokenSelect(method)}
             >
@@ -94,9 +94,12 @@ const PresaleDashboard = () => {
           ))}
         </div>
 
-        <div className="flex flex-col justify-between items-center rounded-lg">
-          <TokenInput tokenLabel={selectedToken === 'SOL' ? 'SOL' : 'USDT'} IconComponent={selectedToken === 'SOL' ? '/solana.png' : '/usdt.png'} />
-          <div className="flex justify-center my-2">
+        <div className="flex justify-between items-center space-x-4 rounded-lg">
+          <TokenInput 
+            tokenLabel={selectedToken === 'SOL' ? 'SOL' : 'USDT'} 
+            IconComponent={selectedToken === 'SOL' ? '/solana.png' : '/usdt.png'} 
+          />
+          <div className="flex flex-col items-center">
             <div className="bg-[#0b6477] p-2 rounded-full">
               <ChevronDown className="text-white" size={16} />
             </div>

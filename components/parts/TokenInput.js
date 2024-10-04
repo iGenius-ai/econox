@@ -15,7 +15,7 @@ const TokenInput = ({ label, IconComponent, tokenLabel }) => {
           <div
             className="flex items-center overflow-hidden rounded-full"
           >
-            <Image src={IconComponent} width={40} height={40} alt={label} />
+            <Image src={IconComponent} width={40} height={40} alt={IconComponent} />
           </div>
           <p className="text-[#f5f5f5] text-sm">{tokenLabel}</p>
         </div>

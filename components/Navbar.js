@@ -1,22 +1,21 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-// import { useWeb3Modal } from '@web3modal/wagmi/react'
+
+const NAVBAR_HEIGHT = 80;
 
 const links = [
-  { href: '/staking', label: 'Staking' },
   { href: '/roadmap', label: 'Roadmap' },
-  { href: '/about', label: 'About' },
-  { href: '/features', label: 'Features' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/vesting', label: 'Vesting' },
+  { href: '#', label: 'About' },
+  { href: '#features', label: 'Features' },
+  { href: '#faq', label: 'FAQ' },
+  // { href: '/vesting', label: 'Vesting' },
 ]
 
 export default function Navigation() {
-  // const { open } = useWeb3Modal();
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
@@ -27,6 +26,25 @@ export default function Navigation() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const handleLinkClick = useCallback((e, href) => {
+    e.preventDefault()
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href)
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.scrollY - NAVBAR_HEIGHT
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+      }
+    } else {
+      window.location.href = href
+    }
+    setIsOpen(false)
   }, [])
 
   return (
@@ -40,6 +58,7 @@ export default function Navigation() {
         }}
         transition={{ duration: 0.3 }}
         className="fixed top-0 left-0 right-0 z-50 p-4 px-6 backdrop-blur-[7px]"
+        style={{ height: `${NAVBAR_HEIGHT}px` }} 
       >
         <div className="absolute w-[50%] inset-0 -z-10 gradient-01"></div>
         <div className="container mx-auto flex justify-between items-center">
@@ -50,8 +69,8 @@ export default function Navigation() {
           </div>
 
           <div className="hidden md:flex space-x-4 border border-[#9494b3] p-2 px-6 rounded-full">
-            {links.map(({ href, label, icon }) => (
-              <Link key={href} href={href}>
+            {links.map(({ href, label }) => (
+              <Link key={href} href={href} onClick={(e) => handleLinkClick(e, href)}>
                 <motion.div
                   className={`relative p-2 ${isScrolled ? "text-white" : "text-gray-100"} text-sm`}
                   whileHover={{ scale: 1.05 }}
@@ -80,12 +99,6 @@ export default function Navigation() {
               </Link>
             </div>
 
-            {/* <button
-              onClick={() => open({ view: 'Connect' })}
-              className="transition duration-300 text-sm font-medium ease-in-out gap-x-1 text-white hover:bg-[#1a1b23] bg-[#0b6477] p-2 px-4 rounded-lg"
-            >
-              Connect
-            </button> */}
             <w3m-button label='Connect' />
 
             <div className={`md:hidden ${isScrolled ? "text-[#0ad1c8]" : "text-gray-100"}`}>   
@@ -115,12 +128,6 @@ export default function Navigation() {
             className="fixed top-[92px] right-0 w-lvw bg-[#101118]/95 backdrop-blur-[5px] z-50 md:hidden overflow-y-auto"
           >
             <div className="p-4 pb-10 flex flex-col">
-              {/* <button onClick={() => setIsOpen(false)} className="mb-10 ml-2 text-gray-200">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="size-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <br /> <br /> */}
               <div className="mt-4">
                 {links.map(({ href, label }, index) => (
                   <motion.div
@@ -129,7 +136,7 @@ export default function Navigation() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <Link href={href}>
+                    <Link href={href} onClick={(e) => handleLinkClick(e, href)}>
                       <motion.div
                         className="px-4 py-2 mb-2"
                         whileTap={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
