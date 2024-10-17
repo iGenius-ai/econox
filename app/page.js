@@ -4,6 +4,7 @@ import WhatsNew from "@/components/WhatsNew";
 import Roadmap from "@/components/Roadmap";
 import Footer from "@/components/Footer";
 import FeatureCardsGrid from "@/components/FeatureCardsGrid";
+import TokenomicsChart from "@/components/Tokenomics";
 
 export const metadata = {
   title: "Econox Coin - Home",
@@ -27,6 +28,7 @@ export default function Home() {
         <div id="roadmap" className="relative">
           <Roadmap />
           <div className="gradient-03 z-0"></div>
+          <TokenomicsChart />
         </div>
 
         <div id="features" className="relative">
