@@ -1,29 +1,36 @@
-import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
-import { cookieStorage, createStorage } from 'wagmi'
-import { mainnet, sepolia } from 'wagmi/chains'
+import { SolanaAdapter } from '@reown/appkit-adapter-solana/react'
+import { solana, solanaTestnet, solanaDevnet } from '@reown/appkit/networks'
+import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets'
 
-// Your Reown Cloud project ID
-export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+import { createAppKit } from "@reown/appkit"
 
-// Create a metadata object
-const metadata = {
-  name: 'EXCoin',
-  description: 'Econox Website',
-  url: 'https://econoxcoin.com/', // origin must match your domain & subdomain
-  icons: ['https://assets.reown.com/reown-profile-pic.png']
+const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+
+if (!projectId) {
+  throw new Error('Project Id is not defined.')
 }
 
-// Create wagmiConfig
-const chains = [mainnet, sepolia]
-export const config = defaultWagmiConfig({
-  chains,
+export const networks = [solana, solanaTestnet, solanaDevnet]
+
+export const solanaWeb3JsAdapter = new SolanaAdapter({
+  wallets: [new PhantomWalletAdapter(), new SolflareWalletAdapter()]
+})
+export const metadata = {
+  name: "appkit-example",
+  description: "AppKit Example - Solana",
+  url: "https://exampleapp.com",
+  icons: ["https://avatars.githubusercontent.com/u/37784886"]
+}
+
+export const modal = createAppKit({
+  adapters: [solanaWeb3JsAdapter],
   projectId,
-  metadata,
-  ssr: true,
-  auth: {
-    socials: ['google', 'x', 'github', 'discord', 'apple', 'facebook'],
+  networks: [solana, solanaTestnet, solanaDevnet],
+  features: {
+      analytics: true,
+      email: true, 
+      socials: ['google', 'x', 'github', 'discord', 'farcaster'],
+      emailShowWallets: true
   },
-  storage: createStorage({
-    storage: cookieStorage
-  }),
+  themeMode: 'light'
 })

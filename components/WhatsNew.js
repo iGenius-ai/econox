@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: "Where can I find the Smart Contract?",
-    answer: ["You can view the verified Smart Contract here", "Token Name: ENX Token", "Token Symbol: $ENX", "Decimals: 18", "Token Type: BEP-20",]
+    answer: ["You can view the verified Smart Contract here", "Token Name: ENX Token", "Token Symbol: $ENX", "Decimals: 18", "Token Type: SOL",]
   },
   {
     question: "How do I buy $ENX token using a smartphone or tablet?",

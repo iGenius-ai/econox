@@ -1,8 +1,7 @@
-import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-const TokenInput = ({ label, IconComponent, tokenLabel }) => {
+const TokenInput = ({ tokenLabel, IconComponent }) => {
   return (
     <div className="bg-[#272833] rounded-xl">
       <div className="flex justify-between items-center p-3">
@@ -15,9 +14,9 @@ const TokenInput = ({ label, IconComponent, tokenLabel }) => {
           <div
             className="flex items-center overflow-hidden rounded-full"
           >
-            <Image src={IconComponent} width={40} height={40} alt={IconComponent} />
+            <Image src={IconComponent} width={45} height={45} alt={IconComponent} />
           </div>
-          <p className="text-[#f5f5f5] text-sm">{tokenLabel}</p>
+          <p className="text-[#f5f5f5] ml-1 text-sm">{tokenLabel}</p>
         </div>
       </div>
     </div>

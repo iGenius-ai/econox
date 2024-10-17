@@ -4,20 +4,23 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { X } from 'lucide-react'
+import { CircleAlert } from 'lucide-react'
 
 const NAVBAR_HEIGHT = 80;
 
 const links = [
   { href: '/roadmap', label: 'Roadmap' },
-  { href: '#', label: 'About' },
+  { href: '/#', label: 'About' },
   { href: '#features', label: 'Features' },
   { href: '#faq', label: 'FAQ' },
-  // { href: '/vesting', label: 'Vesting' },
+  { href: '/vesting', label: 'Vesting' },
 ]
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [showVestingModal, setShowVestingModal] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -30,7 +33,9 @@ export default function Navigation() {
 
   const handleLinkClick = useCallback((e, href) => {
     e.preventDefault()
-    if (href.startsWith('#')) {
+    if (href === '/vesting') {
+      setShowVestingModal(true)
+    } else if (href.startsWith('#')) {
       const element = document.querySelector(href)
       if (element) {
         const elementPosition = element.getBoundingClientRect().top
@@ -46,6 +51,12 @@ export default function Navigation() {
     }
     setIsOpen(false)
   }, [])
+
+  const handleOutsideClick = (e) => {
+    if (e.target.id === 'modal-overlay') {
+      setShowVestingModal(false);
+    }
+  };
 
   return (
     <>
@@ -157,6 +168,38 @@ export default function Navigation() {
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.32526 23.7844L23.7251 6.38458" stroke="currentColor" strokeWidth="1.31611" strokeMiterlimit="10" strokeLinecap="square"/><path d="M12.1422 6.6604C18.297 11.7437 23.4077 6.05591 23.4077 6.05591" stroke="currentColor" strokeWidth="1.31611" strokeMiterlimit="10" strokeLinecap="square"/><path d="M23.4559 17.9739C18.3727 11.8191 24.0604 6.70833 24.0604 6.70833" stroke="currentColor" strokeWidth="1.31611" strokeMiterlimit="10" strokeLinecap="square"/></svg>
                 </Link>
               </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Modal for Vesting */}
+      <AnimatePresence>
+        {showVestingModal && (
+          <motion.div
+            id="modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            onClick={handleOutsideClick} // Close modal on outside click
+          >
+            <div className="bg-[#101118] p-8 rounded-lg shadow-lg relative max-w-md mx-auto">
+              <div className="mb-4 flex justify-between items-center">
+                <h2 className="text-2xl font-bold flex items-center gap-x-2 text-white"><CircleAlert size="24" /> Notice</h2>
+                <button
+                  onClick={() => setShowVestingModal(false)}
+                  className="text-white"
+                >
+                  <X size="24" />
+                </button>
+              </div>
+              <p className="text-white font-light mb-4">
+                Vesting has not started yet. Please check back later for updates on the vesting schedule.
+              </p>
+              <p className="text-white">
+                For more information, visit our <a href="/#faq" className="text-blue-500 underline">FAQ</a> page or contact support.
+              </p>
             </div>
           </motion.div>
         )}

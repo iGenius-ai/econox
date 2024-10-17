@@ -5,6 +5,14 @@ import Roadmap from "@/components/Roadmap";
 import Footer from "@/components/Footer";
 import FeatureCardsGrid from "@/components/FeatureCardsGrid";
 
+export const metadata = {
+  title: "Econox Coin - Home",
+  description: "Home website of the Econox platform",
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
+
 export default function Home() {
   return (
     <main>
