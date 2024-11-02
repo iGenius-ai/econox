@@ -27,21 +27,27 @@ const AccordionItem = ({ faq, isOpen, toggle }) => {
   const contentRef = useRef(null);
 
   return (
-    <div
-      className={`mb-2 rounded-lg transition-all duration-300 ease-in-out overflow-hidden ${
-        isOpen
-          ? "answer"
-          : "bg-[#101118]"
-      }`}
+    <div className={`mb-4 rounded-xl transition-all duration-300 ease-in-out overflow-hidden
+      ${isOpen ? "bg-gradient-to-r from-[#0d1321]/80 to-[#152238]/80 shadow-md shadow-emerald-400/30" : "bg-[#0d1321]/40 hover:bg-[#0d1321]/60"}`}
     >
       <button
-        className={`w-full text-left p-4 md:p-8 py-6 focus:outline-none flex justify-between items-center ${
-          isOpen ? "rounded-t-xl bg-transparent" : "rounded-xl bg-[##213a57]"
-        }`}
+        className={`w-full text-left p-6 md:p-8 focus:outline-none flex justify-between items-center
+          border border-emerald-400/30 transition-colors duration-300
+          ${isOpen ? 
+            "rounded-t-xl bg-gradient-to-r from-emerald-400/10 to-[#0051ff]/10" : 
+            "rounded-xl hover:border-emerald-400"}`}
         onClick={toggle}
       >
-        <span className="font-medium text-sm sm:text-lg">{faq.question}</span>
-        <span className="ml-4">{isOpen ? "▲" : "▼"}</span>
+        <span className={`font-medium text-sm sm:text-lg transition-colors duration-300
+          ${isOpen ? "text-emerald-400" : "text-gray-100"}`}>
+          {faq.question}
+        </span>
+        <span className={`ml-4 transition-all duration-300 text-emerald-400
+          ${isOpen ? "rotate-180" : "rotate-0"}`}>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 5L8 11L14 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        </span>
       </button>
       <div
         ref={contentRef}
@@ -51,9 +57,16 @@ const AccordionItem = ({ faq, isOpen, toggle }) => {
         }}
         className="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
       >
-        <div className="p-8 px-4 md:px-8 pt-0 text-sm sm:text-base text-gray-200 custom-size">
+        <div className="p-8 px-6 md:px-8 pt-2 text-sm sm:text-base text-gray-300 space-y-3">
           {faq.answer.map((line, index) => (
-            <p key={index} className="mb-2">{line}</p>
+            <p key={index} className="leading-relaxed">
+              {line.startsWith('•') ? (
+                <span className="flex items-start gap-3">
+                  <span className="text-emerald-400 mt-1.5">•</span>
+                  <span>{line.substring(2)}</span>
+                </span>
+              ) : line}
+            </p>
           ))}
         </div>
       </div>
@@ -69,19 +82,26 @@ const WhatsNew = () => {
   };
 
   return (
-    <div className="container sm:p-4 py-4 my-16 mt-20 mx-auto text-white rounded-lg shadow-md">
-      <h2 className="font-bold text-3xl sm:text-4xl text-center mb-10 mt-4">
-        FAQs
-      </h2>
+    <div className="container sm:p-4 py-4 my-16 mt-20 mx-auto text-white">
+      <div className="text-center mb-12">
+        <h2 className="font-bold text-3xl sm:text-4xl bg-gradient-to-r from-emerald-400 to-[#0051ff] bg-clip-text text-transparent mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p className="text-gray-400 text-lg">
+          Everything you need to know about ENX
+        </p>
+      </div>
 
-      {faqs.map((faq, index) => (
-        <AccordionItem
-          key={index}
-          faq={faq}
-          isOpen={openIndex === index}
-          toggle={() => toggle(index)}
-        />
-      ))}
+      <div className="max-w-3xl mx-auto">
+        {faqs.map((faq, index) => (
+          <AccordionItem
+            key={index}
+            faq={faq}
+            isOpen={openIndex === index}
+            toggle={() => toggle(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

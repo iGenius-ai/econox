@@ -17,23 +17,23 @@ export const metadata = {
 export default function Home() {
   return (
     <main>
-      <div className="overflow-hidden px-4">
+      <div className="overflow-hidden px-2">
         <Hero />
 
         <div className="relative">
           <StatsDisplay />
-          <div className="gradient-03 z-0"></div>
+          <div className="z-0"></div>
         </div>
 
         <div id="roadmap" className="relative">
           <Roadmap />
-          <div className="gradient-03 z-0"></div>
+          <div className="z-0"></div>
           <TokenomicsChart />
         </div>
 
         <div id="features" className="relative">
           <FeatureCardsGrid />
-          <div id="faq" className="gradient-01 z-0"></div>
+          <div id="faq" className="z-0"></div>
           <WhatsNew />
         </div>
 
