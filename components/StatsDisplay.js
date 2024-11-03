@@ -37,7 +37,7 @@ const StatsDisplay = () => {
   ];
 
   return (
-    <div className="w-full py-10 px-4">
+    <div className="w-full py-10 px-2 md:px-4">
       <div className="container mx-auto">
         {/* Add header section */}
         <div className="text-center mb-12">

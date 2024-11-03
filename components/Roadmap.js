@@ -93,7 +93,7 @@ const RoadmapItem = ({ title, description, percentage, status, index }) => (
 
 const Roadmap = () => {
   return (
-    <div className="w-full py-16 px-4 overflow-hidden">
+    <div className="w-full pt-16 pb-8 px-2 md:px-4 overflow-hidden">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

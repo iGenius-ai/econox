@@ -7,23 +7,24 @@ import PresaleDashboard from "@/components/PresaleDashboard";
 const Hero = () => {
   return (
     <section className="min-h-screen">
-      <div className="flex flex-col sm:flex-row justify-center items-center container py-28 mx-auto px-4">
+      <div className="flex flex-col sm:flex-row justify-center items-center container py-28 mx-auto px-2 md:px-4">
         <div className="relative z-10 flex flex-col gap-y-6 justify-center text-center sm:text-left sm:mb-4 max-sm:items-center">
           <div className="flex flex-col gap-y-2">
-            <span className="text-emerald-400 text-sm font-semibold tracking-wider uppercase mb-2">
-              Welcome to the Future of Finance
+            <span className="bg-emerald-400/20 text-emerald-400 w-max mx-auto md:mx-0 px-4 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wider uppercase mb-2">
+              Built for Tomorrow&apos;s Economy
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-[4rem] max-w-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-[#D4AF37] to-blue-500">
-              Earn, Stake and Burn with Econox
+            <h1 className="text-3xl sm:text-5xl md:text-[4rem] max-w-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-[#D4AF37] to-blue-500">
+              Secure and User-Centric Digital Wealth Management
             </h1>
             <span className="text-2xl sm:text-3xl md:text-4xl text-[#D4AF37] font-bold">
-              Join the Movement
+              Invest in the Future of Finance
             </span>
           </div>
 
           <p className="text-base sm:text-lg md:text-xl max-w-3xl mt-4 text-gray-300 leading-relaxed">
             Econox — An SPL token with a deflationary edge, seamlessly integrated into Solana&apos;s DeFi landscape. 
-            Stake your tokens for passive income, diversify your investments, and set out on your journey toward financial growth. 
+            Discover a future-ready financial ecosystem tailored to your needs, offering a secure, innovative foundation to build and manage
+            your digital assets.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">

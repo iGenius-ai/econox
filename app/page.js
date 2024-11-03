@@ -22,18 +22,21 @@ export default function Home() {
 
         <div className="relative">
           <StatsDisplay />
-          <div className="z-0"></div>
         </div>
 
         <div id="roadmap" className="relative">
           <Roadmap />
-          <div className="z-0"></div>
+        </div>
+
+        <div className="relative">
           <TokenomicsChart />
         </div>
 
         <div id="features" className="relative">
           <FeatureCardsGrid />
-          <div id="faq" className="z-0"></div>
+        </div>
+
+        <div id="faq" className="relative">
           <WhatsNew />
         </div>
 
