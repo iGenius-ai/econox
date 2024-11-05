@@ -14,7 +14,9 @@ const TokenomicsChart = () => {
         borderBottomLeftRadius: '1rem',
         borderBottomRightRadius: '1rem',
         background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(0, 0, 0, 0) 100%)'
-      }
+      },
+      hoverStyle: 'hover:border-emerald-400/70 hover:shadow-[0_0_30px_rgba(52,211,153,0.15)]',
+      glowGradient: 'from-emerald-500/10 via-emerald-400/5'
     },
     {
       icon: RefreshCw,
@@ -27,7 +29,9 @@ const TokenomicsChart = () => {
         borderBottomLeftRadius: '1rem',
         borderBottomRightRadius: '1rem',
         background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(0, 0, 0, 0) 100%)'
-      }
+      },
+      hoverStyle: 'hover:border-blue-400/70 hover:shadow-[0_0_30px_rgba(96,165,250,0.15)]',
+      glowGradient: 'from-blue-500/10 via-blue-400/5'
     },
     {
       icon: ScrollText,
@@ -40,7 +44,9 @@ const TokenomicsChart = () => {
         borderTopRightRadius: '1rem',
         borderBottomRightRadius: '1rem',
         background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(0, 0, 0, 0) 100%)'
-      }
+      },
+      hoverStyle: 'hover:border-purple-400/70 hover:shadow-[0_0_30px_rgba(167,139,250,0.15)]',
+      glowGradient: 'from-purple-500/10 via-purple-400/5'
     },
     {
       icon: ArrowDownToLine,
@@ -53,20 +59,23 @@ const TokenomicsChart = () => {
         borderTopRightRadius: '1rem',
         borderBottomLeftRadius: '1rem',
         background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(0, 0, 0, 0) 100%)'
-      }
+      },
+      hoverStyle: 'hover:border-cyan-400/70 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]',
+      glowGradient: 'from-cyan-500/10 via-cyan-400/5'
     }
   ];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <div className="text-center mb-16 max-w-3xl px-4">
-        <h2 className="text-4xl font-bold mb-6 text-emerald-400/90 tracking-wide">
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 text-transparent bg-clip-text mb-2">
           Tokenomics
         </h2>
-        <p className="text-base md:text-lg text-emerald-300/70 font-light mb-4">
+        <div className="w-24 h-1 mx-auto bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400" />
+        <p className="text-base md:text-lg text-gray-400/70 font-light my-4">
           Experience seamless token management with our comprehensive suite of features
         </p>
-        <p className="text-sm md:text-base text-emerald-400/50 font-light max-w-2xl mx-auto">
+        <p className="text-sm md:text-base text-gray-400/50 font-light max-w-2xl mx-auto">
           Built on Solana&apos;s high-performance blockchain, Econox provides you with essential tools 
           to interact with your digital assets efficiently and securely.
         </p>
@@ -82,8 +91,7 @@ const TokenomicsChart = () => {
               border-2 border-emerald-800/50 
               backdrop-blur-sm 
               transition-all duration-500 ease-out 
-              hover:border-4 hover:border-emerald-400/70 
-              hover:shadow-[0_0_30px_rgba(52,211,153,0.15)] 
+              ${segment.hoverStyle}
               hover:scale-105
               overflow-hidden
             `}
@@ -115,10 +123,10 @@ const TokenomicsChart = () => {
 
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 
               transition-opacity duration-500 pointer-events-none">
-              <div className="absolute inset-0 
-                bg-gradient-to-r from-emerald-500/10 via-emerald-400/5 to-transparent" />
-              <div className="absolute inset-0 
-                bg-gradient-to-b from-emerald-500/5 via-transparent to-emerald-400/5" />
+              <div className={`absolute inset-0 
+                bg-gradient-to-r ${segment.glowGradient} to-transparent`} />
+              <div className={`absolute inset-0 
+                bg-gradient-to-b ${segment.glowGradient} to-transparent opacity-50`} />
             </div>
           </div>
         ))}

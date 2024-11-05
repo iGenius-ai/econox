@@ -74,7 +74,7 @@ const FeatureCardsGrid = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent mb-2">
             Powerful Features
           </h2>
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500" />

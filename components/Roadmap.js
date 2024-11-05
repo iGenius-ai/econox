@@ -97,7 +97,7 @@ const Roadmap = () => {
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 text-transparent bg-clip-text mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 text-transparent bg-clip-text mb-2">
             Our Project Roadmap
           </h2>
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400" />

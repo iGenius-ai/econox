@@ -84,10 +84,11 @@ const WhatsNew = () => {
   return (
     <div className="container sm:p-4 py-4 my-16 mt-20 mx-auto text-white">
       <div className="text-center mb-12">
-        <h2 className="font-bold text-3xl sm:text-4xl bg-gradient-to-r from-emerald-400 to-[#0051ff] bg-clip-text text-transparent mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 text-transparent bg-clip-text mb-2">
           Frequently Asked Questions
         </h2>
-        <p className="text-gray-400 text-lg">
+        <div className="w-24 h-1 mx-auto bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400" />
+        <p className="text-gray-400 text-lg max-w-2xl mt-4 mx-auto">
           Everything you need to know about ENX
         </p>
       </div>

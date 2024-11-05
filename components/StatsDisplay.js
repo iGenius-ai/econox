@@ -41,10 +41,11 @@ const StatsDisplay = () => {
       <div className="container mx-auto">
         {/* Add header section */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 text-transparent bg-clip-text mb-2">
             Our Global Impact
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <div className="w-24 h-1 mx-auto bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400" />
+          <p className="text-gray-400 text-lg max-w-2xl mt-4 mx-auto">
             Empowering millions worldwide through our growing ecosystem
           </p>
         </div>
